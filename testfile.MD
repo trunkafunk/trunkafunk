@@ -21,9 +21,6 @@ sequenceDiagram
     Client->>AccountService:SetWalletAddressRequest()
     Note left of Client: Backup SVR Record    
     
-    participant AccountServices
-    participant ContactDiscovery
-    
 
 
 ```
@@ -33,18 +30,25 @@ sequenceDiagram
 
 Existing User Flow
 ```mermaid
-sequenceDiagram
     participant Client
-    participant Twix
+    participant AuthenticationService
+    participant AccountService
     participant SVR
-    Client->>SVR: GetSVRToken()
-
-    Client->>Twix: InitiatePhoneNumberVerification() 
-    Client->>Twix: VerifyPhoneNumber()
+    Client->>SVR: GetEncryptedKey
+    Client->>AccountService: GetSVRToken()???
+    Client->>AuthenticationService: InitiatePhoneNumberVerification() 
+    Client->>AuthenticationService: VerifyPhoneNumber()
+    
     Note left of Client: Login Token is Granted. Access token is granted
-    Client->>Twix: InitiateEmailAddressVerification
-    Client->>Twix: VerifyEmailAddress    
-    Client->>Twix: getEncryptedBackup    
+    Client->>Client: Check Login Status?
+
+    
+
+    Client->>AuthenticationService: InitiateEmailAddressVerification
+    Client->>AuthenticationService: VerifyEmailAddress    
+    Note left of Client: Request User Pin
+
+    Client->>AccountService: GetBackupWords    
     
     
     

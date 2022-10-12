@@ -7,21 +7,16 @@ sequenceDiagram
     participant Twix
     participant SVR
     Client->>Twix: InitiatePhoneNumberVerification 
-    Twix->>Client: InitiatePhoneNumberVerificationResponse
     Client->>Twix: VerifyPhoneNumber
-    Twix->>Client: VerifyPhoneNumberResponse
-    Note left of Client: Login Token is Granted
-
+    Note left of Client: Login Token is Granted. If New user, Access token is granted
     Note left of Client: If Existing User:
     Client->>Twix: InitiateEmailAddressVerification
-    Twix->>Client: InitiateEmailAddressVerificationResponse
     Client->>Twix: VerifyEmailAddress
-    Twix->>Client: VerifyEmailAddressResponse
-
+    Client->>Client: Check Login Status
     
     
     
-    viewscreen->>iframe: html & javascript
+    ContactDiscovery->>iframe: html & javascript
     iframe->>dotcom: iframe ready
     dotcom->>iframe: set mermaid data on iframe
     iframe->>iframe: render mermaid

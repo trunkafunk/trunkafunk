@@ -1,5 +1,5 @@
 
-##New User Flow
+New User Flow
 
 ```mermaid
 sequenceDiagram
@@ -12,7 +12,11 @@ sequenceDiagram
     
     Note left of Client: Login Token is Granted. Access token is granted
     Client->>Client: Check Login Status
-    
+    Note left of Client: If invited or Active(?)
+    Client->>Client: createWallet()
+
+    Client->>Twix:SetWalletAddressRequest()
+    Note left of Client: Backup SVR Record    
     
     participant AccountServices
     participant ContactDiscovery
@@ -24,7 +28,7 @@ sequenceDiagram
 
 
 
-##Existing User Flow
+Existing User Flow
 ```mermaid
 sequenceDiagram
     participant Client

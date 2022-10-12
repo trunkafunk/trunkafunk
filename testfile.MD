@@ -33,9 +33,7 @@ sequenceDiagram
     Client->>Twix: VerifyPhoneNumber
     Note left of Client: Login Token is Granted. Access token is granted
     Client->>Twix: InitiateEmailAddressVerification
-    Client->>Twix: VerifyEmailAddress
-    Client->>Client: Check Login Status
-    
+    Client->>Twix: VerifyEmailAddress    
     
     participant AccountServices
     participant ContactDiscovery

@@ -15,8 +15,10 @@ sequenceDiagram
     Client->>Client: Check Login Status
     
     
-    
+    participant AccountServices
+    participant ContactDiscovery->>iframe: html & javascript
     ContactDiscovery->>iframe: html & javascript
+
     iframe->>dotcom: iframe ready
     dotcom->>iframe: set mermaid data on iframe
     iframe->>iframe: render mermaid

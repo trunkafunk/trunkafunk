@@ -21,8 +21,6 @@ sequenceDiagram
     Client->>AccountService:SetWalletAddressRequest()
     Note left of Client: Backup SVR Record    
     
-
-
 ```
 
 
@@ -48,7 +46,7 @@ Existing User Flow
     Client->>AuthenticationService: VerifyEmailAddress    
     Note left of Client: Request User Pin
 
-    Client->>AccountService: GetBackupWords    
+    Client->>AccountService: GetBackupWords()    
     
     
     

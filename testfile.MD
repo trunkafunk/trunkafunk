@@ -21,7 +21,7 @@ sequenceDiagram
 
 
 
-If Existing User:
+    If Existing User:
     Client->>Twix: InitiateEmailAddressVerification
     Twix->>Client:
     

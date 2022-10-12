@@ -16,7 +16,8 @@ sequenceDiagram
     
     
     participant AccountServices
-    participant ContactDiscovery->>iframe: html & javascript
+    participant ContactDiscovery
+    
     ContactDiscovery->>iframe: html & javascript
 
     iframe->>dotcom: iframe ready

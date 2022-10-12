@@ -1,12 +1,5 @@
 ##This is a testfile
 
-```mermaid
-
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-```
 
 ```mermaid
 sequenceDiagram
@@ -17,13 +10,14 @@ sequenceDiagram
     Twix->>Client: InitiatePhoneNumberVerificationResponse
     Client->>Twix: VerifyPhoneNumber
     Twix->>Client: VerifyPhoneNumberResponse
-    Login Token is Granted
+    Note left of Client: Login Token is Granted
 
-
-
-    If Existing User:
+    Note left of Client: If Existing User:
     Client->>Twix: InitiateEmailAddressVerification
-    Twix->>Client:
+    Twix->>Client: InitiateEmailAddressVerificationResponse
+    Client->>Twix: VerifyEmailAddress
+    Twix->>Client: VerifyEmailAddressResponse
+
     
     
     

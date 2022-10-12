@@ -28,6 +28,7 @@ sequenceDiagram
 
 Existing User Flow
 ```mermaid
+sequenceDiagram
     participant Client
     participant AuthenticationService
     participant AccountService
